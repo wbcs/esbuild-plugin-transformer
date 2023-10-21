@@ -1,6 +1,6 @@
 import type { Plugin, OnLoadArgs, OnLoadResult } from 'esbuild';
-import { compileWithBabel, type BabelOptions } from './babel';
-import { compileWithSWC, type SwcOptions } from './swc';
+import { compileWithBabel, type BabelOptions } from './babel.js';
+import { compileWithSWC, type SwcOptions } from './swc.js';
 
 export function transformer({
   compiler,

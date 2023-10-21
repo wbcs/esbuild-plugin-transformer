@@ -9,6 +9,10 @@
     "moduleResolution": "Node",
     "module": "ESNext",
     "target": "ESNext",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true
   }
 }
