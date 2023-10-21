@@ -1,13 +1,8 @@
 {
   "name": "esbuild-plugin-transformer",
-  "version": "0.0.0-experimental-20231021133511",
+  "version": "0.0.0-experimental-20231021140103",
   "type": "module",
-  "description": "",
-  "keyworks": [
-    "esbuild",
-    "babel",
-    "swc"
-  ],
+  "description": "a plugin for esbuild",
   "files": [
     "dist/",
     "CHANGELOG.md"
@@ -30,7 +25,10 @@
     "reset": "rimraf dist/",
     "prepublishOnly": "pnpm compile"
   },
-  "keywords": [],
+  "keywords": [
+    "esbuild",
+    "babel",
+    "swc"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
