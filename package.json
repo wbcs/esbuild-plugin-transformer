@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-transformer",
-  "version": "0.0.0-experimental-20231021140103",
+  "version": "0.1.0",
   "type": "module",
   "description": "a plugin for esbuild",
   "files": [
@@ -28,9 +28,9 @@
   "keywords": [
     "esbuild",
     "babel",
-    "swc"],
-  "author": "",
-  "license": "ISC",
+    "swc"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@types/babel__core": "^7.20.3",

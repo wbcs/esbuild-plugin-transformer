@@ -1,5 +1,11 @@
 # esbuild-plugin-transformer
 
+## 0.1.0
+
+### Minor Changes
+
+- chore: release stable version
+
 ## 0.0.0-experimental-20231021140103
 
 ### Patch Changes
