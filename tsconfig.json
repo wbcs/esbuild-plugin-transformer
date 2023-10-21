@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "dist/",
+    "outDir": "dist/",
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "skipLibCheck": true
+  }
+}
