@@ -1,6 +1,6 @@
-import { readFile } from "node:fs/promises";
-import { transform, type Options } from "@swc/core";
-import type { BuildOptions } from "esbuild";
+import { readFile } from 'node:fs/promises';
+import { transform, type Options } from '@swc/core';
+import type { BuildOptions } from 'esbuild';
 
 export interface SwcOptions {
   path: string;
@@ -9,9 +9,9 @@ export interface SwcOptions {
 }
 
 export async function compileWithSWC({ path, options }: SwcOptions) {
-  const code = await readFile(path, "utf-8");
-  const isTS = path.endsWith(".ts") || path.endsWith(".tsx");
-  const isJSX = path.endsWith("x");
+  const code = await readFile(path, 'utf-8');
+  const isTS = path.endsWith('.ts') || path.endsWith('.tsx');
+  const isJSX = path.endsWith('x');
   const result = await transform(code, {
     filename: path,
     sourceMaps: false,
@@ -21,11 +21,11 @@ export async function compileWithSWC({ path, options }: SwcOptions) {
       parser: {
         ...(isTS
           ? {
-              syntax: "typescript",
+              syntax: 'typescript',
               tsx: isJSX,
             }
           : {
-              syntax: "ecmascript",
+              syntax: 'ecmascript',
               jsx: isJSX,
             }),
         ...options.jsc?.parser,

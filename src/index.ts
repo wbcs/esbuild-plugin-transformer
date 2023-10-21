@@ -1,21 +1,21 @@
-import type { Plugin, OnLoadArgs, OnLoadResult } from "esbuild";
-import { compileWithBabel, type BabelOptions } from "./babel";
-import { compileWithSWC, type SwcOptions } from "./swc";
+import type { Plugin, OnLoadArgs, OnLoadResult } from 'esbuild';
+import { compileWithBabel, type BabelOptions } from './babel';
+import { compileWithSWC, type SwcOptions } from './swc';
 
 export function transformer({
   compiler,
   options,
 }:
-  | { compiler: "swc"; options: SwcOptions["options"] }
-  | { compiler: "babel"; options: BabelOptions["options"] }): Plugin {
+  | { compiler: 'swc'; options: SwcOptions['options'] }
+  | { compiler: 'babel'; options: BabelOptions['options'] }): Plugin {
   return {
-    name: "esbuild-plugin-transformer",
+    name: 'esbuild-plugin-transformer',
     setup(build) {
       build.onLoad(
         { filter: /\.([cm]?[tj]sx?)$/ },
         async (args: OnLoadArgs): Promise<OnLoadResult> => {
           const contents =
-            compiler === "swc"
+            compiler === 'swc'
               ? await compileWithSWC({
                   path: args.path,
                   options,
@@ -27,9 +27,9 @@ export function transformer({
                   buildOptions: build.initialOptions,
                 });
           if (!contents) {
-            throw new Error("empty output!");
+            throw new Error('empty output!');
           }
-          return { contents: contents, loader: "js" };
+          return { contents: contents, loader: 'js' };
         }
       );
     },
